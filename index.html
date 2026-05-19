@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Paul Zimansky – Fotograf aus Rostock. Authentische Portrait-Fotografie. So wie du bist.">
+    <meta name="keywords" content="Fotograf Rostock, Portrait Fotografie, Mecklenburg-Vorpommern, authentische Fotografie">
+    <title>Paul Zimansky – Fotograf Rostock | So wie du bist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#home" class="logo">Paul Zimansky</a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#ueber-mich" class="nav-link">Über mich</a></li>
+                <li><a href="#prozess" class="nav-link">Wie ich arbeite</a></li>
+                <li><a href="#leistungen" class="nav-link">Leistungen</a></li>
+                <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
+            </ul>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Navigation öffnen">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                So wie<br>
+                <span class="hero-emphasis">du bist.</span>
+            </h1>
+            <p class="hero-subtitle">
+                Authentische Fotografie aus Rostock.<br>
+                Keine Posen. Keine Perfektion. Nur echte Momente.
+            </p>
+            <div class="hero-cta">
+                <a href="#portfolio" class="btn btn-primary">Portfolio ansehen</a>
+                <a href="#kontakt" class="btn btn-secondary">Anfragen</a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Portfolio</h2>
+                <p class="section-intro">
+                    Menschen · Geschichten · Begegnungen
+                </p>
+            </div>
+
+            <!-- Portfolio Filter -->
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">Alle</button>
+                <button class="filter-btn" data-filter="portraits">Portraits</button>
+                <button class="filter-btn" data-filter="paare">Paare</button>
+                <button class="filter-btn" data-filter="events">Veranstaltungen</button>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="portfolio-grid" id="portfolio-grid">
+                <!-- Portfolio Items werden hier dynamisch eingefügt -->
+                <!-- Platzhalter für Demo -->
+                <div class="portfolio-item" data-category="portraits">
+                    <div class="portfolio-image">
+                        <div class="placeholder-image">Portrait 1</div>
+                    </div>
+                    <div class="portfolio-caption">
+                        <h3>Name der Person</h3>
+                        <p>Kurze Story zum Bild...</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="portraits">
+                    <div class="portfolio-image">
+                        <div class="placeholder-image">Portrait 2</div>
+                    </div>
+                    <div class="portfolio-caption">
+                        <h3>Name der Person</h3>
+                        <p>Kurze Story zum Bild...</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="paare">
+                    <div class="portfolio-image">
+                        <div class="placeholder-image">Paar 1</div>
+                    </div>
+                    <div class="portfolio-caption">
+                        <h3>Name des Paares</h3>
+                        <p>Kurze Story zum Bild...</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="events">
+                    <div class="portfolio-image">
+                        <div class="placeholder-image">Event 1</div>
+                    </div>
+                    <div class="portfolio-caption">
+                        <h3>Name der Veranstaltung</h3>
+                        <p>Kurze Story zum Bild...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Über mich Section -->
+    <section id="ueber-mich" class="about">
+        <div class="container-wide">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="images/paul-ueber-mich.jpg" alt="Paul Zimansky – Fotograf aus Rostock" loading="lazy">
+                </div>
+                <div class="about-content">
+                    <h2 class="section-title">Über mich</h2>
+                    <div class="about-text">
+                        <p class="lead">
+                            Ich bin Paul – Fotograf aus Mecklenburg-Vorpommern, aktuell zuhause in Rostock. Aber eigentlich bin ich vor allem eines: ein Mensch der Begegnungen liebt. Der Geschichten von Menschen sammelt. Und sie sichtbar macht.
+                        </p>
+                        <p>
+                            Nicht die perfekten. Nicht die inszenierten. Die echten. Die authentischen. Die ehrlichen. Nicht die, die immer nur schönes Wetter oder ein aufgesetztes Lächeln zeigen.
+                        </p>
+                        <p>
+                            Vor über 10 Jahren hat mir ein guter Freund gezeigt, wie man einen Moment nicht einfach knipst – sondern wirklich einfängt. Was damals als Neugier begann, wurde zur Leidenschaft. Und diese Leidenschaft nehme ich heute ernst. Richtig ernst.
+                        </p>
+                        <p class="emphasis">
+                            Jeder Mensch hat seine eigene Kreativität. Meine ist ein Auge für den Moment – und eine Menschenkenntnis die mir zeigt, wann dieser Moment da ist.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prozess Section -->
+    <section id="prozess" class="process">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Wie ich arbeite</h2>
+                <p class="section-intro">
+                    Kein Studio. Kein künstliches Licht. Keine Anweisungen wie: "Stell dich da hin. Lächel mal."
+                </p>
+            </div>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <h3>Vorgespräch</h3>
+                    <p>Wir lernen uns kennen. Telefon oder Video. Ich höre zu, was dir wichtig ist. Keine Standardfragen.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <h3>Location & Vorbereitung</h3>
+                    <p>Draußen. Im echten Leben. Wir finden einen Ort, der zu dir passt. Goldene Stunde, wenn möglich.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <h3>Das Shooting</h3>
+                    <p>45–60 Minuten. Erst warmwerden, dann Flow. Ich dirigiere, aber du posierst nicht. Du bist einfach da.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <h3>Auswahl & Bearbeitung</h3>
+                    <p>Du siehst alle Bilder als Preview. Wir wählen die besten aus. Farbkorrektur, leichte Retusche – keine Körperveränderung.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">05</div>
+                    <h3>Lieferung</h3>
+                    <p>Digitale Galerie, 2–3 Tage später. Die Bilder gehören dir. Für immer.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leistungen Section -->
+    <section id="leistungen" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Leistungen</h2>
+                <p class="section-intro">
+                    Fünf Wege, deine Geschichte zu erzählen. Immer ehrlich. Immer du.
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Portraitfotografie</h3>
+                    <p>
+                        Kein Fotostudio. Keine aufgesetzte Pose. Nur du – so wie du bist.
+                        Ich lerne dich vorher kennen und gemeinsam suchen wir den Ort, der sich
+                        für dich richtig anfühlt.
+                    </p>
+                    <ul class="service-list">
+                        <li>Vorgespräch zum Kennenlernen</li>
+                        <li>Gemeinsame Ortswahl</li>
+                        <li>ca. 60 Minuten Shooting</li>
+                        <li>Professionelle Bildbearbeitung</li>
+                        <li>Passwortgeschützte Online-Galerie</li>
+                        <li>Optional: Kurzer Instagram-Clip</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Paar- und Familienfotografie</h3>
+                    <p>
+                        Bevor ich auch nur eine einzige Aufnahme mache, will ich eure Geschichte
+                        kennen. Wie habt ihr euch kennengelernt? Was war der Moment, wo ihr wusstet –
+                        das ist es? Erst dann gehen wir raus. Und dann entstehen Bilder, die sich
+                        anfühlen wie ihr – in einem echten Moment.
+                    </p>
+                    <ul class="service-list">
+                        <li>Ausführliches Vorgespräch</li>
+                        <li>Gemeinsame Ortswahl</li>
+                        <li>60–90 Minuten Shooting</li>
+                        <li>15 professionell bearbeitete Bilder</li>
+                        <li>Passwortgeschützte Online-Galerie</li>
+                        <li>Optional: Kurzer Instagram-Clip</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Menschen, die etwas bewegen</h3>
+                    <p>
+                        Du engagierst dich. Du baust etwas auf. Du setzt dich ein – für deine
+                        Gemeinde, dein Unternehmen, deine Überzeugung. Ich begleite dich bei dem,
+                        was du tust, und mache Bilder, die zeigen, wer du bist und wofür du stehst.
+                        Kein Anzugfoto vor weißer Wand. Sondern du – mitten in deiner Welt.
+                    </p>
+                    <ul class="service-list">
+                        <li>Gespräch vorab</li>
+                        <li>Begleitung an deinem Ort</li>
+                        <li>2–3 Stunden Shooting</li>
+                        <li>20–25 bearbeitete Bilder</li>
+                        <li>Optional: Kurzer Instagram-Clip</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Mini-Portrait</h3>
+                    <p>
+                        Einfach mal anfangen, sich zu zeigen. 30 Minuten, ein Ort,
+                        5 bearbeitete Bilder. Kein Aufwand, kein Stress – nur du.
+                    </p>
+                    <ul class="service-list">
+                        <li>30 Minuten Shooting</li>
+                        <li>5 professionell bearbeitete Bilder</li>
+                        <li>Passwortgeschützte Online-Galerie</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Individuelle Projekte</h3>
+                    <p>
+                        Veranstaltungen, dokumentarische Begleitungen oder besondere Ideen,
+                        die in keine Schublade passen. Lass uns einfach reden.
+                    </p>
+                </div>
+            </div>
+
+            <div class="services-note">
+                <p>
+                    Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.
+                </p>
+            </div>
+
+            <div class="services-cta">
+                <a href="#kontakt" class="btn btn-primary">Lass uns sprechen</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontakt Section -->
+    <section id="kontakt" class="contact">
+        <div class="container-small">
+            <div class="section-header">
+                <h2 class="section-title">Kontakt</h2>
+                <p class="section-intro">
+                    Bereit für dein Shooting? Oder erstmal Fragen? Schreib mir.
+                </p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p class="contact-emphasis">
+                        So wie du bist –<br>
+                        ist es richtig und gut so.
+                    </p>
+                    <div class="contact-methods">
+                        <a href="https://instagram.com/paulzimansky" class="contact-link" target="_blank">
+                            <span class="icon">📸</span>
+                            @paulzimansky
+                        </a>
+                        <a href="mailto:kontakt@paulzimansky.de" class="contact-link">
+                            <span class="icon">✉️</span>
+                            kontakt@paulzimansky.de
+                        </a>
+                        <a href="tel:+4915756662842" class="contact-link">
+                            <span class="icon">📱</span>
+                            0157 5666 2842
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">
+                    © 2026 Paul Zimansky · Fotograf aus Rostock
+                </p>
+                <div class="footer-links">
+                    <a href="impressum.html">Impressum</a>
+                    <a href="datenschutz.html">Datenschutz</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightbox-close">&times;</button>
+        <button class="lightbox-prev" id="lightbox-prev">‹</button>
+        <button class="lightbox-next" id="lightbox-next">›</button>
+        <img src="" alt="" class="lightbox-image" id="lightbox-image">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
