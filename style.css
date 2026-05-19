@@ -916,3 +916,56 @@ section {
     letter-spacing: 0.04em; color: var(--color-gray-dark);
     text-transform: uppercase;
 }
+
+/* ==============================================
+   ÜBER MICH – neue Struktur (einheitliche Größe)
+   ============================================== */
+.about-text p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--color-gray-darker);
+    margin-bottom: var(--spacing-sm);
+}
+.about-divider {
+    border: none;
+    border-top: 1px solid var(--color-gray-medium);
+    width: 60px;
+    margin: var(--spacing-lg) auto;
+}
+.about-text .lead, .about-text .emphasis { font-size: 1.05rem; font-style: normal; color: var(--color-gray-darker); }
+
+/* ==============================================
+   WIE ICH ARBEITE – Foto + Text
+   ============================================== */
+.how-i-work-container {
+    display: flex;
+    gap: 48px;
+    align-items: flex-start;
+}
+.how-i-work-image {
+    flex: 0 0 350px;
+    position: sticky;
+    top: 90px;
+}
+.how-i-work-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+.how-i-work-steps { flex: 1; }
+.how-i-work-steps .process-steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+}
+@media (max-width: 768px) {
+    .how-i-work-container { display: block; }
+    .how-i-work-image {
+        position: static;
+        width: 100%;
+        margin-bottom: var(--spacing-lg);
+    }
+    .how-i-work-image img { max-height: 480px; object-fit: cover; }
+    .how-i-work-steps .process-steps { grid-template-columns: 1fr; }
+}

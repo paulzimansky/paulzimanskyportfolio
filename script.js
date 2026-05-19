@@ -6,14 +6,16 @@ const navMenu = document.getElementById('nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
 
 // Mobile Menu Toggle
-navToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-});
+if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+}
 
 // Close menu when clicking on a link
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
+        if (navMenu) navMenu.classList.remove('active');
     });
 });
 
@@ -32,6 +34,9 @@ window.addEventListener('scroll', () => {
 // ==============================================
 const filterButtons = document.querySelectorAll('.filter-btn');
 const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+// Portfolio/Lightbox nur auf Seiten ausführen, die diese Elemente haben
+if (portfolioItems.length > 0 || document.getElementById('lightbox')) {
 
 filterButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -164,6 +169,8 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight') nextImage();
     if (e.key === 'ArrowLeft') prevImage();
 });
+
+} // Ende Portfolio/Lightbox-Block
 
 // ==============================================
 // SMOOTH SCROLL
