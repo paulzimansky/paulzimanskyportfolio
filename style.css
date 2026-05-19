@@ -821,3 +821,30 @@ section {
 .post-nav a { color:var(--color-black); text-decoration:none; font-size:0.95rem; max-width:45%; }
 .post-nav a:hover { text-decoration:underline; }
 @media (max-width:768px){ .blog-grid{grid-template-columns:1fr;} }
+
+/* ==============================================
+   KONTAKTFORMULAR
+   ============================================== */
+.contact-page { padding:140px 0 var(--spacing-2xl); min-height:80vh; }
+.contact-form { display:flex; flex-direction:column; gap:var(--spacing-md); }
+.hp-field { position:absolute; left:-9999px; }
+.form-row { display:flex; flex-direction:column; }
+.form-row label { font-size:0.9rem; font-weight:500; margin-bottom:0.4rem; color:var(--color-gray-darker); }
+.form-row input, .form-row textarea {
+    font-family:var(--font-body); font-size:1rem; padding:0.85rem 1rem;
+    border:1px solid var(--color-gray-medium); background:var(--color-white);
+    color:var(--color-black); border-radius:0; transition:border-color var(--transition-fast);
+}
+.form-row input:focus, .form-row textarea:focus { outline:none; border-color:var(--color-black); }
+.form-row textarea { resize:vertical; min-height:140px; }
+.form-error { color:#b91c1c; font-size:0.85rem; margin-top:0.35rem; min-height:1em; }
+.form-check label { flex-direction:row; display:flex; align-items:flex-start; gap:0.6rem; font-weight:400; font-size:0.92rem; }
+.form-check input { width:auto; margin-top:0.2rem; }
+.form-check a { color:var(--color-black); }
+.form-hint { font-size:0.85rem; color:var(--color-gray-dark); margin:0; }
+.contact-form .btn { align-self:flex-start; cursor:pointer; }
+.contact-form .btn:disabled { opacity:0.6; cursor:not-allowed; }
+.form-success { padding:var(--spacing-2xl) 0; }
+@media (max-width:768px){
+    .contact-form .btn { align-self:stretch; text-align:center; }
+}

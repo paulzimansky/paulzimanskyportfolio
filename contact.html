@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kontakt zu Paul Zimansky – Anfragen für Buchungen, Shootings und Projekte.">
+    <title>Kontakt – Paul Zimansky</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Paul Zimansky</a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Startseite</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Kontakt</a></li>
+            </ul>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Navigation öffnen">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="contact-page">
+        <div class="container-small">
+            <div class="section-header">
+                <h1 class="section-title">Lass uns sprechen</h1>
+                <p class="section-intro">
+                    Erzähl mir, was du vorhast. Ich melde mich persönlich zurück –
+                    ehrlich und ohne Verkaufsdruck.
+                </p>
+            </div>
+
+            <form name="contact" method="POST" data-netlify="true"
+                  netlify-honeypot="bot-field" action="/success.html"
+                  id="contact-form" class="contact-form" novalidate>
+                <input type="hidden" name="form-name" value="contact">
+                <p class="hp-field">
+                    <label>Bitte leer lassen: <input name="bot-field"></label>
+                </p>
+
+                <div class="form-row">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required>
+                    <span class="form-error" data-for="name"></span>
+                </div>
+
+                <div class="form-row">
+                    <label for="email">E-Mail *</label>
+                    <input type="email" id="email" name="email" required>
+                    <span class="form-error" data-for="email"></span>
+                </div>
+
+                <div class="form-row">
+                    <label for="phone">Telefon (optional)</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+
+                <div class="form-row">
+                    <label for="subject">Betreff *</label>
+                    <input type="text" id="subject" name="subject" required>
+                    <span class="form-error" data-for="subject"></span>
+                </div>
+
+                <div class="form-row">
+                    <label for="message">Nachricht *</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                    <span class="form-error" data-for="message"></span>
+                </div>
+
+                <div class="form-row form-check">
+                    <label>
+                        <input type="checkbox" id="privacy" name="privacy" required>
+                        Ich habe die <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a>
+                        gelesen und bin einverstanden. *
+                    </label>
+                    <span class="form-error" data-for="privacy"></span>
+                </div>
+
+                <p class="form-hint">
+                    Deine Angaben werden ausschließlich zur Bearbeitung deiner Anfrage
+                    verwendet. Mehr dazu im <a href="datenschutz.html">Datenschutz</a>
+                    und <a href="impressum.html">Impressum</a>.
+                </p>
+
+                <button type="submit" class="btn btn-primary" id="submit-btn">
+                    Nachricht senden
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">© Paul Zimansky</p>
+                <div class="footer-links">
+                    <a href="impressum.html">Impressum</a>
+                    <a href="datenschutz.html">Datenschutz</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="contact.js"></script>
+</body>
+</html>
