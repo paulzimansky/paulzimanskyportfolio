@@ -6,6 +6,27 @@
     if (!form) return;
     const btn = document.getElementById('submit-btn');
 
+    // Service aus URL-Parameter vorausfüllen
+    const labels = {
+        'portrait': 'Portraitfotografie',
+        'paar-familie': 'Paar- und Familienfotografie',
+        'engagement': 'Menschen, die etwas bewegen',
+        'mini-portrait': 'Mini-Portrait',
+        'projekt': 'Individuelle Projekte'
+    };
+    const svc = new URLSearchParams(location.search).get('service');
+    if (svc) {
+        const field = document.getElementById('service');
+        const row = document.getElementById('service-row');
+        if (field && row) {
+            field.value = labels[svc] || svc.charAt(0).toUpperCase() + svc.slice(1);
+            row.style.display = '';
+            // Betreff vorausfüllen
+            const subj = form.elements.subject;
+            if (subj && !subj.value) subj.value = 'Anfrage: ' + field.value;
+        }
+    }
+
     const messages = {
         name: 'Bitte gib deinen Namen ein.',
         email: 'Bitte gib eine gültige E-Mail-Adresse ein.',
