@@ -1,7 +1,7 @@
 ---
 title: "Newborn-Fotografie ohne Kitsch"
 date: 2024-05-17
-category: "Familie"
+category: "Einblicke"
 description: "Warum die ehrlichsten Bilder oft die leisen sind."
 image: "/images/blog/platzhalter.svg"
 ---

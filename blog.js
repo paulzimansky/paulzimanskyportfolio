@@ -61,15 +61,16 @@ function renderList(posts) {
                 <h3>${p.title}</h3>
                 <p class="blog-meta">${p.dateFormatted}</p>
                 <p class="blog-desc">${p.description}</p>
+                <span class="blog-link">Mehr lesen →</span>
             </div>
         </a>`).join('');
 }
 
-// Kategorie-Filter
+// Kategorie-Filter (feste Kategorien)
 function buildFilter() {
     const bar = document.getElementById('blog-filter');
     if (!bar) return;
-    const cats = ['Alle', ...new Set(allPosts.map(p => p.category))];
+    const cats = ['Alle', 'Tipps', 'Gedanken', 'Einblicke', 'Rezensionen'];
     bar.innerHTML = cats.map((c, i) =>
         `<button class="blog-filter-btn${i === 0 ? ' active' : ''}" data-cat="${c}">${c}</button>`
     ).join('');
@@ -91,12 +92,23 @@ function renderSingle() {
     if (!post) { wrap.innerHTML = '<p>Beitrag nicht gefunden. <a href="blog.html">Zurück zum Blog</a></p>'; return; }
 
     document.title = post.title + ' – Paul Zimansky';
+    const url = encodeURIComponent(location.href);
+    const text = encodeURIComponent('Schau dir diesen Blog-Post an: ' + post.title);
     wrap.innerHTML = `
         <span class="blog-tag">${post.category}</span>
         <h1>${post.title}</h1>
         <p class="blog-meta">${post.dateFormatted}</p>
         <img class="post-hero" src="${post.image}" alt="${post.title}">
-        <div class="post-body">${marked.parse(post.contentMd)}</div>`;
+        <div class="post-body">${marked.parse(post.contentMd)}</div>
+
+        <section class="social-share">
+            <p>Hat dir dieser Post gefallen? Teile ihn gerne!</p>
+            <div class="share-buttons">
+                <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=${url}" target="_blank" rel="noopener">Facebook</a>
+                <a class="share-btn" href="https://wa.me/?text=${text}%20${url}" target="_blank" rel="noopener">WhatsApp</a>
+                <a class="share-btn" href="https://instagram.com/paulzimansky" target="_blank" rel="noopener">Instagram</a>
+            </div>
+        </section>`;
 
     // Vorheriger / nächster Post (allPosts ist nach Datum sortiert)
     const i = allPosts.findIndex(p => p.slug === slug);
@@ -106,6 +118,25 @@ function renderSingle() {
     nav.innerHTML = `
         ${prev ? `<a href="blog-post.html?post=${encodeURIComponent(prev.slug)}">← ${prev.title}</a>` : '<span></span>'}
         ${next ? `<a href="blog-post.html?post=${encodeURIComponent(next.slug)}">${next.title} →</a>` : '<span></span>'}`;
+
+    // Related Posts (max. 2 andere)
+    const related = allPosts.filter(p => p.slug !== slug).slice(0, 2);
+    const relWrap = document.getElementById('related-posts');
+    if (relWrap && related.length) {
+        relWrap.innerHTML = `
+            <h2>Diese Posts könnten dich auch interessieren</h2>
+            <div class="related-grid">
+                ${related.map(p => `
+                    <a class="blog-card" href="blog-post.html?post=${encodeURIComponent(p.slug)}">
+                        <div class="blog-card-img"><img src="${p.image}" alt="${p.title}" loading="lazy"></div>
+                        <div class="blog-card-body">
+                            <span class="blog-tag">${p.category}</span>
+                            <h3>${p.title}</h3>
+                            <span class="blog-link">Lesen →</span>
+                        </div>
+                    </a>`).join('')}
+            </div>`;
+    }
 }
 
 // Init

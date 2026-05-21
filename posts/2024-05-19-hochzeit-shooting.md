@@ -1,7 +1,7 @@
 ---
 title: "Mein erstes Hochzeitsshooting"
 date: 2024-05-19
-category: "Hochzeiten"
+category: "Einblicke"
 description: "Ein wunderschöner Tag voller echter Momente – und was ich dabei über das Festhalten von Gefühlen gelernt habe."
 image: "/images/blog/platzhalter.svg"
 ---
