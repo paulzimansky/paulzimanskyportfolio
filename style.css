@@ -1152,3 +1152,163 @@ section {
     display: grid; gap: var(--spacing-md);
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
+
+/* ==============================================
+   PORTFOLIO – 12er-Raster, mobil zweispaltig
+   ============================================== */
+#portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: var(--spacing-lg);
+}
+@media (min-width: 700px) {
+    #portfolio-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+}
+@media (min-width: 1100px) {
+    #portfolio-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.portfolio-hint {
+    font-size: 1rem;
+    color: var(--color-gray-dark);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ==============================================
+   ÜBER MICH – Ausklapp-Variante
+   ============================================== */
+.about-text .about-lead {
+    font-size: 1.3rem;
+    line-height: 1.45;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--color-black);
+    margin-bottom: var(--spacing-sm);
+}
+
+.about-more {
+    margin-top: var(--spacing-md);
+}
+
+.about-more-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 12px 22px;
+    border: 1px solid var(--color-black);
+    color: var(--color-black);
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    list-style: none;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+.about-more-toggle::-webkit-details-marker { display: none; }
+.about-more-toggle::marker { content: ""; }
+.about-more-toggle:hover {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+.about-chevron {
+    flex-shrink: 0;
+    transition: transform var(--transition-normal);
+}
+.about-more[open] .about-chevron { transform: rotate(180deg); }
+
+.about-more-content {
+    margin-top: var(--spacing-md);
+}
+
+.about-figure {
+    margin: var(--spacing-md) 0;
+}
+.about-figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(100%);
+    transition: filter var(--transition-slow);
+}
+.about-figure img:hover { filter: grayscale(0%); }
+
+.about-text .about-pullquote {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    line-height: 1.35;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    color: var(--color-black);
+    margin: var(--spacing-lg) 0 var(--spacing-sm);
+}
+
+/* ==============================================
+   VERÖFFENTLICHUNGEN
+   ============================================== */
+.publications {
+    border-top: 1px solid var(--color-gray-medium);
+}
+
+.publications-list {
+    list-style: none;
+    max-width: 640px;
+    margin: 0 auto;
+}
+.publications-list li {
+    border-bottom: 1px solid var(--color-gray-medium);
+}
+.publications-list li:first-child {
+    border-top: 1px solid var(--color-gray-medium);
+}
+.publications-list a {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2px var(--spacing-sm);
+    padding: 18px 4px;
+    min-height: 48px;
+    color: var(--color-black);
+    text-decoration: none;
+    transition: background-color var(--transition-fast);
+}
+.publications-list a:hover { background-color: var(--color-gray-light); }
+
+.pub-name {
+    grid-column: 1;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+.pub-desc {
+    grid-column: 1;
+    font-size: 0.95rem;
+    color: var(--color-gray-darker);
+}
+.pub-year {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: center;
+    font-size: 0.95rem;
+    color: var(--color-gray-dark);
+    font-variant-numeric: tabular-nums;
+}
+
+/* ==============================================
+   LEISTUNGEN – Veröffentlichungs-Nachweis
+   ============================================== */
+.service-credit {
+    font-size: 0.92rem;
+    color: var(--color-gray-dark);
+    border-left: 2px solid var(--color-gray-medium);
+    padding-left: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+}
+
+/* ==============================================
+   MOBIL – Abstände straffen
+   ============================================== */
+@media (max-width: 768px) {
+    section { padding: var(--spacing-lg) 0; }
+    .section-header { margin-bottom: var(--spacing-md); }
+    .about-content { padding: 0; }
+}

@@ -1,5 +1,5 @@
 // ============================================
-// PORTFOLIO MODAL (18-Kacheln-Grid mit Story)
+// PORTFOLIO MODAL (Raster mit Story je Bild)
 // ============================================
 (function () {
     const items = document.querySelectorAll('#portfolio-grid .portfolio-item');
