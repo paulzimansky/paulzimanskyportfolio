@@ -1,38 +1,70 @@
 // ============================================
-// PORTFOLIO MODAL (Raster mit Story je Bild)
+// PORTFOLIO MODAL – Bild, Ort/Datum und Geschichte
 // ============================================
 (function () {
-    const items = document.querySelectorAll('#portfolio-grid .portfolio-item');
+    const triggers = document.querySelectorAll('#portfolio-grid .portfolio-trigger');
     const modal = document.getElementById('pfModal');
-    if (!items.length || !modal) return;
+    if (!triggers.length || !modal) return;
 
     const img = document.getElementById('pfImage');
+    const meta = document.getElementById('pfMeta');
     const story = document.getElementById('pfStory');
+    const closeBtn = document.getElementById('pfClose');
     let idx = 0;
+    let lastFocus = null;
 
     function show(i) {
-        idx = (i + items.length) % items.length;
-        const el = items[idx];
+        idx = (i + triggers.length) % triggers.length;
+        const el = triggers[idx];
         img.src = el.dataset.image;
-        img.alt = el.querySelector('img').alt;
+        img.alt = el.querySelector('img') ? el.querySelector('img').alt : '';
+        if (meta) meta.textContent = el.dataset.caption || '';
         story.textContent = el.dataset.story || '';
         modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
-    }
-    function close() {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
+        if (closeBtn) closeBtn.focus();
     }
 
-    items.forEach((el, i) => el.addEventListener('click', () => show(i)));
-    document.getElementById('pfClose').addEventListener('click', close);
-    document.getElementById('pfPrev').addEventListener('click', () => show(idx - 1));
-    document.getElementById('pfNext').addEventListener('click', () => show(idx + 1));
+    function close() {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        if (lastFocus) lastFocus.focus();
+    }
+
+    triggers.forEach((el, i) => el.addEventListener('click', () => {
+        lastFocus = el;
+        show(i);
+    }));
+
+    if (closeBtn) closeBtn.addEventListener('click', close);
+    const prev = document.getElementById('pfPrev');
+    const next = document.getElementById('pfNext');
+    if (prev) prev.addEventListener('click', () => show(idx - 1));
+    if (next) next.addEventListener('click', () => show(idx + 1));
+
     modal.addEventListener('click', e => { if (e.target === modal) close(); });
+
     document.addEventListener('keydown', e => {
         if (!modal.classList.contains('active')) return;
         if (e.key === 'Escape') close();
         if (e.key === 'ArrowRight') show(idx + 1);
         if (e.key === 'ArrowLeft') show(idx - 1);
+    });
+})();
+
+// ============================================
+// ÜBER MICH – Ausklappen merkt sich den Zustand nicht,
+// scrollt aber beim Zuklappen sauber zurück
+// ============================================
+(function () {
+    const details = document.querySelector('.about-more');
+    if (!details) return;
+    details.addEventListener('toggle', function () {
+        if (!details.open) {
+            const top = details.getBoundingClientRect().top;
+            if (top < 0) details.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
     });
 })();
