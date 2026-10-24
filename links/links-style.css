@@ -82,6 +82,9 @@ body {
 .footer-logo { width:72px; height:auto; display:block; }
 .footer-text { font-size:0.85rem; color:var(--grau); letter-spacing:0.04em; text-decoration:none; }
 .footer-text:hover { color:var(--blau); }
+.legal-links { font-size:0.78rem; color:var(--grau); }
+.legal-links a { color:var(--grau); text-decoration:none; }
+.legal-links a:hover { color:var(--blau); }
 
 a:focus-visible { outline:3px solid var(--blau); outline-offset:3px; }
 
