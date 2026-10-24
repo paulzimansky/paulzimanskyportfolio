@@ -24,10 +24,10 @@ body {
 }
 
 .profile-section { margin-bottom:36px; }
-.profile-photo-wrap { position:relative; width:140px; height:140px; margin:0 auto 20px; }
-.profile-photo { width:140px; height:140px; border-radius:50%; object-fit:cover; display:block; border:3px solid var(--sand); box-shadow:0 0 0 1px var(--strandhafer); }
+.profile-photo-wrap { position:relative; width:150px; margin:0 auto 22px; }
+.profile-photo { width:150px; height:auto; border-radius:6px; display:block; }
 .profile-badge {
-    position:absolute; right:-14px; bottom:-6px;
+    position:absolute; right:-22px; bottom:-14px;
     width:62px; height:auto; padding:6px;
     background:var(--sand); border-radius:50%;
     box-shadow:0 0 0 1px var(--strandhafer);
@@ -92,7 +92,7 @@ body {
 a:focus-visible { outline:3px solid var(--blau); outline-offset:3px; }
 
 @media (max-width:480px) {
-    .profile-photo-wrap, .profile-photo { width:120px; height:120px; }
+    .profile-photo-wrap, .profile-photo { width:130px; }
     .profile-badge { width:54px; }
     .profile-section h1 { font-size:1.45rem; }
     .description { font-size:1.9rem; }
